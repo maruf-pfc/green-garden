@@ -1,11 +1,5 @@
 # Green Garden Website
 
-Work on upload product feature:
-
-```markdown
-If a user go to upload_product page then check if the user is logged in or not. If the user already logged in then show him upload product form where the categories are fetched from database. If the user not logged in then show him a login interface in the same page. Ask him to enter username and password. Fetch the username and password and check it with database admin_user username and password. Don't need to check with the hashed password because we store plain text as admin password on the database. If everything is okay then show him the product_upload form, get the response and insert it to the database table.
-```
-
 This project is a website for a gardening service business, offering about us, services, an FAQ section, a contact page, and a product upload feature for gardening products. The website includes database interaction and dynamic content handling.
 
 ## Table of Contents
@@ -25,9 +19,10 @@ This project is a website for a gardening service business, offering about us, s
 ## Features
 
 - Dynamic product upload functionality
-- About us, Services descriptions and contact form
+- About Us, Services descriptions, and contact form
 - User-friendly design with responsive layout
 - Database integration for storing uploaded products
+- Form submission with email notification upon successful contact
 
 ## Technologies
 
@@ -42,25 +37,28 @@ This project is a website for a gardening service business, offering about us, s
 ```
 📦green-garden
  ┣ 📂css
- ┃ ┗ 📜styles.css                # Styles for the website
+ ┃ ┗ 📜styles.css
  ┣ 📂js
- ┃ ┗ 📜app.js                    # Client-side scripts
+ ┃ ┗ 📜app.js
  ┣ 📂uploads
- ┃ ┗ 📜wave.png                  # Uploaded images
+ ┃ ┗ 📜wave.png
  ┣ 📂utilities
- ┃ ┣ 📜footer.php                # Footer file to include across pages
- ┃ ┗ 📜header.php                # Header file to include across pages
- ┣ 📜README.md                   # Documentation
- ┣ 📜about.php                   # About page
- ┣ 📜contact.php                 # Contact page
- ┣ 📜db.sql                      # Database schema
- ┣ 📜db_connection.php           # Database connection file
- ┣ 📜fetch_products.php          # Fetch products dynamically
- ┣ 📜index.php                   # Home page
- ┣ 📜product_upload.php          # Product upload form page
- ┣ 📜product_upload_process.php  # Product upload processing script
- ┣ 📜services.php                # Services page
- ┗ 📜upload_form.php             # Form for uploading product images
+ ┃ ┣ 📜footer.php
+ ┃ ┗ 📜header.php
+ ┣ 📂vendor
+ ┣ 📜README.md
+ ┣ 📜about.php
+ ┣ 📜composer.json
+ ┣ 📜composer.lock
+ ┣ 📜contact.php
+ ┣ 📜db.sql
+ ┣ 📜db_connection.php
+ ┣ 📜fetch_products.php
+ ┣ 📜index.php
+ ┣ 📜product_upload.php
+ ┣ 📜product_upload_process.php
+ ┣ 📜services.php
+ ┗ 📜submit_contact.php
 ```
 
 ## Getting Started
@@ -98,8 +96,26 @@ You need the following to run this project:
 
 4. **Set up the database:**
 
-   - Open **phpMyAdmin** and create a new database named `green_garden_db`.
-   - Import the `db.sql` file into this database to create the necessary tables.
+   - Open **phpMyAdmin** and create a new database named `green_garden`.
+   - Import the `green_garden.sql` file into this database to create the necessary tables.
+
+5. **Install PHPMailer:**
+
+The project uses PHPMailer for sending emails. Install it via Composer with the following command:
+
+```bash
+composer require phpmailer/phpmailer:^6.9
+```
+
+This will add the following to your composer.json file:
+
+```json
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
+```
 
 ### Running the Project
 
@@ -118,6 +134,11 @@ You need the following to run this project:
    ```bash
    http://localhost/green-garden/product_upload.php
    ```
+
+    To upload a product you have to sign in as an admin. The default admin credentials are:
+
+    - Username: `admin`
+    - Password: `admin123`
 
 3. **Database Configuration:**
 

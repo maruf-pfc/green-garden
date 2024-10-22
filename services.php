@@ -1,6 +1,6 @@
 <?php
-require 'db_connection.php';
-include('./utilities/header.php');
+require "db_connection.php";
+include "./utilities/header.php";
 ?>
 
 <header>
@@ -10,7 +10,7 @@ include('./utilities/header.php');
 <section id="services-296">
     <div class="cs-container">
         <div class="cs-content">
-            <h2 class="cs-title">We Are Committed To Delivering Top Quality Legal Services</h2>
+            We Are Committed To Delivering Top Quality Legal Services
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
@@ -175,4 +175,4 @@ for (const item of faqItems) {
 }                    
 </script>
                                 
-<?php include('./utilities/footer.php'); ?>
+<?php include "./utilities/footer.php"; ?>
