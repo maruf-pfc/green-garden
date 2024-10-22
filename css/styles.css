@@ -1,0 +1,905 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #559f35;
+  --primaryLight: #559f35;
+  --secondary: #559f35;
+  --secondaryLight: #559f35;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #4e4b66;
+  --bodyTextColorWhite: #fafbfc;
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --bodyFontSize: 1rem;
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 24px;
+}
+
+#filter {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#filter .filter-products {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filter .filter-products * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+#filter select,
+#filter input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#filter button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#filter button:hover {
+  background-color: #45a049;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 20px;
+  width: 70vw;
+}
+
+.product {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+  min-height: 300px;
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .product {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 901px) {
+  .product {
+    width: calc(25% - 20px);
+  }
+}
+
+/* Image styles */
+.product img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.product span:nth-child(1) {
+  text-align: right;
+  display: block;
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 16px;
+  color: #888;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #4caf50, #357a38);
+  min-height: 100px;
+  margin-top: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../uploads/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+.contact_us_2 * {
+  font-family: Nunito, sans-serif;
+}
+
+.contact_us_2 .text-blk {
+  margin: 0;
+  line-height: 25px;
+}
+
+.contact_us_2 .responsive-cell-block {
+  min-height: 75px;
+}
+
+.contact_us_2 input:focus {
+  outline: none;
+}
+
+.contact_us_2 .container-block {
+  min-height: 75px;
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+.contact_us_2 .submit-btn:hover {
+  background-color: #0381fe;
+}
+
+.contact_us_2 .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto 50px;
+}
+
+.contact_us_2 .responsive-container-block.big-container {
+  padding: 10px 30px;
+  position: relative;
+  height: auto;
+}
+
+.contact_us_2 .responsive-container-block.container {
+  position: static;
+  min-height: 75px;
+  flex-direction: column;
+  z-index: 2;
+  max-width: 800px;
+  margin: 120px auto 50px;
+}
+
+.contact_us_2 .container-block.form-wrapper {
+  background-color: white;
+  max-width: 799px;
+  text-align: center;
+  padding: 50px 40px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  border-radius: 6px;
+}
+
+.contact_us_2 .text-blk.contactus-head {
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 900;
+}
+
+.contact_us_2 .text-blk.contactus-subhead {
+  color: #9c9c9c;
+  margin-bottom: 50px;
+}
+
+.contact_us_2
+  .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12 {
+  margin-bottom: 26px;
+  min-height: 50px;
+}
+
+.contact_us_2 .input,
+.contact_us_2 .textinput {
+  width: 98%;
+  padding: 15px;
+  border: 2px solid #eeeeee;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.contact_us_2 .textinput {
+  min-height: 150px;
+}
+
+.contact_us_2 .submit-btn {
+  width: 98%;
+  background-color: #03a9f4;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact_us_2 .form-box {
+  margin: 0 auto;
+}
+
+.contact_us_2 .social-media-links {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.contact_us_2 .link-img {
+  width: 30px;
+  height: 30px;
+}
+
+.contact_us_2 .text-blk.input-title {
+  text-align: left;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #9c9c9c;
+}
+
+.contact_us_2 ::placeholder {
+  color: #dadada;
+}
+
+.contact_us_2 .blueBG {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 300px;
+  background-color: #03a9f4;
+}
+
+@media (max-width: 768px) {
+  .contact_us_2 .submit-btn,
+  .contact_us_2 .input,
+  .contact_us_2 .textinput {
+    width: 100%;
+  }
+
+  .contact_us_2 .container-block.form-wrapper {
+    margin-top: 80px;
+    margin: 0;
+  }
+
+  .contact_us_2 .responsive-container-block.container {
+    margin-top: 80px;
+  }
+
+  .contact_us_2 .text-blk.contactus-head {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact_us_2 .container-block.form-wrapper {
+    padding: 50px 15px;
+    margin-top: 60px;
+  }
+
+  .contact_us_2 .text-blk.input-title {
+    font-size: 12px;
+  }
+
+  .contact_us_2 .text-blk.contactus-head {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .contact_us_2 .input {
+    height: 45px;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Why Choose          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #services-296 {
+    padding: var(--sectionPadding);
+  }
+  #services-296 .cs-container {
+    width: 100%;
+    /* changes to 1440px on desktop */
+    max-width: 43.75rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #services-296 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+
+  #services-296 .cs-title {
+    max-width: 30ch;
+  }
+  #services-296 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+  }
+  #services-296 .cs-item {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    /* clips image corners */
+    overflow: hidden;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+  #services-296 .cs-item:hover {
+    cursor: pointer;
+  }
+  #services-296 .cs-item:hover .cs-image {
+    opacity: 1;
+  }
+  #services-296 .cs-item:hover .cs-image img {
+    transform: scale(1.1);
+  }
+  #services-296 .cs-item:hover .cs-icon {
+    /* turns it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  #services-296 .cs-item:hover .cs-h3,
+  #services-296 .cs-item:hover .cs-item-text {
+    color: #fff;
+  }
+  #services-296 .cs-image {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+    background-color: var(--primary);
+    transition: opacity 0.3s;
+  }
+  #services-296 .cs-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+  #services-296 .cs-link {
+    text-decoration: none;
+  }
+  #services-296 .cs-icon {
+    width: auto;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  #services-296 .cs-icon path {
+    transition: fill 0.3s;
+  }
+  #services-296 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2vw, 1.5625rem);
+    line-height: 1.2em;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: var(--headerColor);
+    transition: color 0.3s;
+    font-weight: bold;
+  }
+  #services-296 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    transition: color 0.3s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-296 .cs-card-group {
+    justify-content: space-between;
+    /* makes sure every box "stretches" to be the same height as the tallest box */
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #services-296 .cs-item {
+    width: 48.6%;
+  }
+}
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #services-296 .cs-container {
+    max-width: 90rem;
+  }
+  #services-296 .cs-card-group {
+    justify-content: center;
+  }
+  #services-296 .cs-item {
+    /* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 22.5vw or 23% to get the desired sizes fit 4 in a row and then stack when you add more */
+    width: clamp(23.84%, 22.5vw, 23.95%);
+  }
+}
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-350 {
+    padding: var(--sectionPadding);
+    background: #f7f7f7;
+  }
+  #faq-350 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 40px - 48px */
+    gap: clamp(2.5rem, 5vw, 3rem);
+  }
+  #faq-350 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+
+  #faq-350 .cs-title {
+    margin: 0 0 2rem 0;
+  }
+  #faq-350 .cs-faq-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #faq-350 .cs-faq-item {
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    transition: border-bottom 0.3s;
+  }
+  #faq-350 .cs-faq-item.active {
+    border-color: var(--primaryLight);
+  }
+  #faq-350 .cs-faq-item.active .cs-button:before {
+    background-color: var(--primaryLight);
+    transform: rotate(315deg);
+  }
+  #faq-350 .cs-faq-item.active .cs-button:after {
+    background-color: var(--primaryLight);
+    transform: rotate(-315deg);
+  }
+  #faq-350 .cs-faq-item.active .cs-item-p {
+    height: auto;
+    /* 20px - 24px bottom */
+    /* 16px - 24px left & right */
+    padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 1.3vw, 1.5rem);
+    opacity: 1;
+  }
+  #faq-350 .cs-button {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-align: left;
+    font-weight: bold;
+    /* 16px - 20px */
+    padding: clamp(1rem, 1.3vw, 1.25rem);
+    border: none;
+    background: transparent;
+    color: var(--headerColor);
+    display: block;
+    width: 100%;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #faq-350 .cs-button:hover {
+    cursor: pointer;
+  }
+  #faq-350 .cs-button:before {
+    /* left line */
+    content: "";
+    width: 0.5rem;
+    height: 0.125rem;
+    background-color: var(--headerColor);
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    top: 45%;
+    right: 1.5rem;
+    transform: rotate(45deg);
+    /* animate the transform from the left side of the x axis, and the center of the y */
+    transform-origin: left center;
+    transition: transform 0.5s;
+  }
+  #faq-350 .cs-button:after {
+    /* right line */
+    content: "";
+    width: 0.5rem;
+    height: 0.125rem;
+    background-color: var(--headerColor);
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    top: 45%;
+    right: 1.3125rem;
+    transform: rotate(-45deg);
+    /* animate the transform from the right side of the x axis, and the center of the y */
+    transform-origin: right center;
+    transition: transform 0.5s;
+  }
+  #faq-350 .cs-button-text {
+    width: 80%;
+    display: block;
+  }
+  #faq-350 .cs-item-p {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    width: 90%;
+    height: 0;
+    margin: 0;
+    /* 16px - 24px */
+    padding: 0 clamp(1rem, 2vw, 1.5rem);
+    opacity: 0;
+    color: var(--bodyTextColor);
+    /* clips the text so it doesn't show up */
+    overflow: hidden;
+    transition: opacity 0.3s, padding-bottom 0.3s;
+  }
+  #faq-350 .cs-left {
+    margin-top: 50px;
+    font-size: min(2.08vw, 0.791em);
+    width: 42.875em;
+    height: 42em;
+    position: relative;
+    /* flips it horizontally */
+    transform: scaleX(-1);
+  }
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2em);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes floatAnimation2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1em);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  #faq-350 .cs-left:before {
+    /* blue circle */
+    content: "";
+    width: 7.5em;
+    height: 7.5em;
+    border-radius: 50%;
+    background: var(--secondary);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: 6.25em;
+    left: 0em;
+    z-index: 10;
+    animation-name: floatAnimation;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #faq-350 .cs-picture {
+    border-radius: 50%;
+    border: clamp(6px, 1.2vw, 12px) solid #ffffff;
+    /* clips the img tag corners */
+    overflow: hidden;
+    position: absolute;
+    display: block;
+  }
+  #faq-350 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  #faq-350 .cs-picture1 {
+    width: 42em;
+    height: 42em;
+    top: -0.75em;
+    left: -0.75em;
+  }
+  #faq-350 .cs-picture2 {
+    width: 12.5em;
+    height: 12.5em;
+    top: -0.75em;
+    left: -0.75em;
+    animation-name: floatAnimation2;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  #faq-350 .cs-picture3 {
+    width: 18.75em;
+    height: 18.75em;
+    bottom: -0.75em;
+    right: -0.75em;
+    animation-name: floatAnimation;
+    animation-duration: 13s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #faq-350 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3.25rem;
+  }
+  #faq-350 .cs-left {
+    margin-top: 50px;
+    /* reset the scale */
+    font-size: min(1vw, 1em);
+    /* prevents flexbox from squishing it */
+    flex: none;
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+  #faq-350 .cs-title,
+  #faq-350 .cs-topper {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
