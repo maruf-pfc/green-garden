@@ -1,6 +1,18 @@
 # Green Garden Website
 
-This project is a website for a gardening service business, offering about us, services, an FAQ section, a contact page, and a product upload feature for gardening products. The website includes database interaction and dynamic content handling.
+## Project Goal
+
+The primary goal of the Green Garden Website is to streamline the purchasing process for users who operate businesses on Facebook pages and groups by providing an efficient platform for showcasing gardening products. This project aims to:
+
+1. **Enhance User Experience:** Allow consumers to easily filter products based on categories and price ranges, minimizing the time spent scrolling through social media for product details.
+
+2. **Simplify Communication:** Enable users to take screenshots of products and send them directly to the business's Facebook page for inquiries. The screenshots will include unique code numbers, allowing admins to quickly identify and retrieve relevant product information.
+
+3. **Facilitate Product Management:** Provide admins with a secure login feature to upload and manage products seamlessly. The system will include a database query functionality, enabling admins to efficiently retrieve product details and relay information to workers.
+
+4. **Encourage User Engagement:** Allow users to contact the website owner via email for any queries, promoting a responsive and customer-oriented approach.
+
+By achieving these goals, the Green Garden Website will significantly improve the interaction between consumers and business owners, making the shopping experience more accessible, organized, and effective.
 
 ## Table of Contents
 
