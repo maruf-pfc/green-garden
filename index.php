@@ -13,6 +13,25 @@ if (isset($_SESSION["message"])) {
     <header>
         <h1>Welcome to Green Garden</h1>
         <p>Explore a variety of flowers, fruits, and trees!</p>
+        <nav>
+            <ul>
+            <li class="active">
+                <a href="index.php">Home</a>
+            </li>
+            <span>></span>
+            <li>
+                <a href="about.php">About</a>
+            </li>
+            <span>></span>
+            <li>
+                <a href="services.php">Services</a>
+            </li>
+            <span>></span>
+            <li>
+                <a href="contact.php">Contact</a>
+            </li>
+            </ul>
+        </nav>
     </header>
 
     <section id="filter">

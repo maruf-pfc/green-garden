@@ -3,11 +3,30 @@ require "db_connection.php";
 include "./utilities/header.php";
 ?>
 
-<header>
-    <h1>Services Page</h1>
-</header>
+    <header>
+      <h1>Services Page</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.php">Home</a>
+          </li>
+          <span>></span>
+          <li>
+            <a href="about.php">About</a>
+          </li>
+          <span>></span>
+          <li class="active">
+            <a href="services.php">Services</a>
+          </li>
+          <span>></span>
+          <li>
+            <a href="contact.php">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<main>
+    <main>
       <section class="services">
         <h2 class="services-title">Our Services</h2>
         <div class="services-grid">

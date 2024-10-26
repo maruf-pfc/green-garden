@@ -4,7 +4,26 @@ include "./utilities/header.php";
 ?>
 
 <header>
-    <h1>Contact Page</h1>
+  <h1>Contact Page</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.php">Home</a>
+      </li>
+      <span>></span>
+      <li>
+        <a href="about.php">About</a>
+      </li>
+      <span>></span>
+      <li class="active">
+        <a href="services.php">Services</a>
+      </li>
+      <span>></span>
+      <li>
+        <a href="contact.php">Contact</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <main class="container">

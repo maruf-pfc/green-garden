@@ -17,6 +17,34 @@ main {
   padding: 2rem 0;
 }
 
+nav{
+  padding-top: 10px;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+nav ul li{
+  display: inline;
+  cursor: pointer;
+}
+
+nav ul li.active{
+  text-decoration: underline;
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+
 header {
   text-align: center;
   background-color: #2c7744;

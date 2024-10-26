@@ -3,11 +3,30 @@ require "db_connection.php";
 include "./utilities/header.php";
 ?>
 
-<header>
-    <h1>About Page</h1>
-</header>
+    <header>
+        <h1>About Page</h1>
+        <nav>
+            <ul>
+            <li>
+                <a href="index.php">Home</a>
+            </li>
+            <span>></span>
+            <li class="active">
+                <a href="about.php">About</a>
+            </li>
+            <span>></span>
+            <li>
+                <a href="services.php">Services</a>
+            </li>
+            <span>></span>
+            <li>
+                <a href="contact.php">Contact</a>
+            </li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="container">
+    <main class="container">
         <h1>About Green Garden</h1>
         <section class="about-intro">
             <img src="https://placehold.co/600x400" alt="Green Garden Store" class="about-image">
