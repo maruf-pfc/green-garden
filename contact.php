@@ -15,11 +15,11 @@ include "./utilities/header.php";
         <a href="about.php">About</a>
       </li>
       <span>></span>
-      <li class="active">
+      <li>
         <a href="services.php">Services</a>
       </li>
       <span>></span>
-      <li>
+      <li class="active">
         <a href="contact.php">Contact</a>
       </li>
     </ul>
