@@ -1,18 +1,13 @@
 <?php
 session_start();
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
 require "vendor/autoload.php";
 
-//Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-// validate the form
 $name = $_POST["name"] ?? null;
 $email = $_POST["email"] ?? null;
 $message = $_POST["message"] ?? null;
@@ -33,19 +28,17 @@ if (strlen($message) < 50) {
 }
 
 try {
-    //Server settings
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP(); //Send using SMTP
-    $mail->Host = "smtp.gmail.com"; //Set the SMTP server to send through
-    $mail->SMTPAuth = true; //Enable SMTP authentication
-    $mail->Username = "example@gmail.com"; //SMTP username
-    $mail->Password = "**** **** **** ****"; //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
-    $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->isSMTP();
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "marufsarkercse2022@gmail.com";
+    $mail->Password = "mradurptsatagwkp";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
 
     //Recipients
-    $mail->setFrom("example@gmail.com", "Green Garden");
-    $mail->addAddress("example@gmail.com", "$name");
+    $mail->setFrom("marufsarkercse2022@gmail.com", "Green Garden");
+    $mail->addAddress("marufsarkercse2022@gmail.com", "$name");
 
     //Content
     $mail->isHTML(true); //Set email format to HTML
@@ -54,12 +47,11 @@ try {
 
     // Send email
     if ($mail->send()) {
-        $_SESSION["message"] = "Message sent successfully!"; // Set session message
+        $_SESSION["message"] = "Message sent successfully!";
     } else {
-        $_SESSION["message"] = "Message could not be sent!"; // Set session message
+        $_SESSION["message"] = "Message could not be sent!";
     }
     // echo 'Message has been sent';
-    // clear the form fields
     $name = "";
     $email = "";
     $message = "";

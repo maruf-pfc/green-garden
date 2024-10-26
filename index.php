@@ -5,9 +5,9 @@ include "./utilities/header.php";
 
 // Check if there is a message in the URL
 if (isset($_SESSION["message"])) {
-    $message = htmlspecialchars($_SESSION["message"]); // Sanitize the message
-    echo "<script>alert('$message');</script>"; // Show alert with the message
-    unset($_SESSION["message"]); // Clear the message so it doesn't show again
+    $message = htmlspecialchars($_SESSION["message"]);
+    echo "<script>alert('$message');</script>";
+    unset($_SESSION["message"]);
 }
 ?>
     <header>

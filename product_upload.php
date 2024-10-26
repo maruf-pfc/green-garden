@@ -1,44 +1,34 @@
 <?php
 session_start();
 
-// Set session timeout duration to 30 minutes (1800 seconds)
 $timeout_duration = 1800;
 
-// Check if the session variable for the last activity time exists
 if (isset($_SESSION["LAST_ACTIVITY"])) {
-    // Calculate the session's lifetime
     if (time() - $_SESSION["LAST_ACTIVITY"] > $timeout_duration) {
-        // Last activity was more than 30 minutes ago
-        session_unset(); // Unset session variables
-        session_destroy(); // Destroy the session
-        header("Location: login.php"); // Redirect to login page or wherever appropriate
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
         exit();
     }
 }
 
-// Update the last activity time
 $_SESSION["LAST_ACTIVITY"] = time();
 
-// Initialize variables
 $product_name = "";
 $category_id = "";
 $price = "";
 $image_url = "";
 $description = "";
-include "db_connection.php"; // Make sure this file connects to your database correctly
+include "db_connection.php";
 
-// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-// Check if user is logged in
 if (!isset($_SESSION["username"])) {
-    // User not logged in, handle login form submission
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        // Fetch user data from the database
         $query =
             "SELECT * FROM admin_users WHERE username = ? AND password = ?";
         $stmt = $conn->prepare($query);
@@ -47,16 +37,13 @@ if (!isset($_SESSION["username"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // User exists, set session variable and redirect to the same page
             $_SESSION["username"] = $username;
             header("Location: product_upload.php");
             exit();
         } else {
             $login_error = "Invalid username or password.";
         }
-    }
-    // Show the login form
-    ?>
+    } ?>
     <h1>Admin Login</h1>
     <form method="POST">
         <label for="username">Username:</label>
@@ -110,21 +97,17 @@ if (!isset($_SESSION["username"])) {
     <?php
 } else {
 
-    // User is logged in, handle product upload form submission
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["upload"])) {
-        // Collect data from the form
-        $product_name = $_POST["name"] ?? ""; // Default to an empty string if not set
-        $category_id = (int) ($_POST["category"] ?? 0); // Default to 0 if not set
-        $price = (float) ($_POST["price"] ?? 0.0); // Default to 0.0 if not set
-        $image_url = $_POST["image"] ?? ""; // Default to an empty string if not set
-        $description = $_POST["description"] ?? ""; // Default to an empty string if not set
+        $product_name = $_POST["name"] ?? "";
+        $category_id = (int) ($_POST["category"] ?? 0);
+        $price = (float) ($_POST["price"] ?? 0.0);
+        $image_url = $_POST["image"] ?? "";
+        $description = $_POST["description"] ?? "";
 
-        // Debugging: Check incoming data
         echo "<pre>";
-        print_r($_POST); // This should display the contents of the $_POST array
+        print_r($_POST);
         echo "</pre>";
 
-        // Insert into database
         $stmt = $conn->prepare(
             "INSERT INTO products (product_name, category_id, price, image_url, description) VALUES (?, ?, ?, ?, ?)"
         );
@@ -139,7 +122,6 @@ if (!isset($_SESSION["username"])) {
 
         if ($stmt->execute()) {
             echo "<p style='color:green;'>Product uploaded successfully!</p>";
-            // Clear the form fields
             $product_name = "";
             $category_id = 0;
             $price = 0.0;
@@ -148,7 +130,7 @@ if (!isset($_SESSION["username"])) {
         } else {
             echo "<p style='color:red;'>Error uploading product: " .
                 $stmt->error .
-                "</p>"; // Show error message
+                "</p>";
         }
     }
 

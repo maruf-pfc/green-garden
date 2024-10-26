@@ -17,6 +17,7 @@ By achieving these goals, the Green Garden Website will significantly improve th
 ## Table of Contents
 
 - [Green Garden Website](#green-garden-website)
+  - [Project Goal](#project-goal)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technologies](#technologies)
