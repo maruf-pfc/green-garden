@@ -180,14 +180,18 @@ This will add the following to your composer.json file:
    Test all pages, including the home page (`index.php`), about us page (`about.php`), services page (`services.php`), and contact page (`contact.php`).
 
 <div align="center">
-  
-![image](https://github.com/user-attachments/assets/c2202b0b-6a4f-4081-815f-8944d7fae243)
+
+![image](https://github.com/user-attachments/assets/ef8679cd-0abc-4cde-babf-3a5b8378612b)
+![image](https://github.com/user-attachments/assets/d9c78269-1813-4916-bdeb-8d8a5365b55c)
+![image](https://github.com/user-attachments/assets/404f31ec-5c54-43e5-b50d-e63af6b3f5c4)
+![image](https://github.com/user-attachments/assets/b0b677ae-740a-4abe-bdc1-dbcf44c102ba)
+![image](https://github.com/user-attachments/assets/3392495d-aed2-4b33-a595-910c9e11e7de)
+![image](https://github.com/user-attachments/assets/a1954498-e25b-49af-bc83-4c8de7f4f0dc)
+![image](https://github.com/user-attachments/assets/c6d74bf7-946f-4a65-88b4-9bbf804b50ca)
 ![image](https://github.com/user-attachments/assets/d24a7309-73be-4b96-bdef-ee8948d0e739)
 ![image](https://github.com/user-attachments/assets/ce71914f-cabb-4829-b6c9-00852a46e2ec)
 ![image](https://github.com/user-attachments/assets/30347211-9037-450f-b72d-ca15e0059c6f)
 ![image](https://github.com/user-attachments/assets/3dcdb5a6-bbd8-4733-a424-2e061becc47a)
-![image](https://github.com/user-attachments/assets/a1954498-e25b-49af-bc83-4c8de7f4f0dc)
-![image](https://github.com/user-attachments/assets/c6d74bf7-946f-4a65-88b4-9bbf804b50ca)
 
 </div>
 
