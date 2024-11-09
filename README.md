@@ -49,16 +49,25 @@ By achieving these goals, the Green Garden Website will significantly improve th
 
 ```
 📦green-garden
+ ┣ 📂.github
+ ┃ ┗ 📂ISSUE_TEMPLATE
+ ┃ ┃ ┣ 📜bug_report.md
+ ┃ ┃ ┗ 📜feature_request.md
+ ┣ 📂assets
+ ┃ ┗ 📂images
+ ┃ ┃ ┗ 📜placeholder.jpg
  ┣ 📂css
  ┃ ┗ 📜styles.css
  ┣ 📂js
  ┃ ┗ 📜app.js
- ┣ 📂uploads
- ┃ ┗ 📜wave.png
  ┣ 📂utilities
  ┃ ┣ 📜footer.php
  ┃ ┗ 📜header.php
  ┣ 📂vendor
+ ┃ ┣ 📂composer
+ ┃ ┣ 📂phpmailer
+ ┃ ┗ 📜autoload.php
+ ┣ 📜LICENSE
  ┣ 📜README.md
  ┣ 📜about.php
  ┣ 📜composer.json
@@ -67,7 +76,9 @@ By achieving these goals, the Green Garden Website will significantly improve th
  ┣ 📜db.sql
  ┣ 📜db_connection.php
  ┣ 📜fetch_products.php
+ ┣ 📜green_garden.sql
  ┣ 📜index.php
+ ┣ 📜product_detail.php
  ┣ 📜product_upload.php
  ┣ 📜product_upload_process.php
  ┣ 📜services.php

@@ -121,6 +121,7 @@ function displayProducts(products) {
 
     productElement.innerHTML = `
             <div class="product-image">
+				<p style="text-align: right; display: block;">C${product.category_id}:P${product.product_id}</p>
                 <img src="${product.image_url}" 
                      alt="${product.product_name}" 
                      onerror="this.onerror=null; this.src='assets/images/placeholder.jpg'">
