@@ -105,31 +105,6 @@ include "./utilities/header.php";
               thriving garden while protecting the planet.
             </p>
           </div>
-          <!-- <div class="service-card">
-            <div class="service-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </div>
-            <h3 class="service-title">Edible Garden Installation</h3>
-            <p class="service-description">
-              Grow your own fresh produce with our edible garden installation
-              service. We design and create vegetable and herb gardens suited to
-              your space and lifestyle. Enjoy the benefits of homegrown food
-              while fostering sustainability.
-            </p>
-          </div> -->
         </div>
       </section>
       <section class="how-it-works">

@@ -26,16 +26,14 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-links">
-            <a href="#" aria-label="Facebook"
+            <a href="https://www.facebook.com/programmingforcareer" aria-label="Facebook" target="_blank" rel="noopener noreferrer"
               ><i class="fab fa-facebook"></i
             ></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
+            <a href="https://www.facebook.com/programmingforcareer" aria-label="Facebook" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-facebook"></i
             ></a>
-            <a href="#" aria-label="Pinterest"
-              ><i class="fab fa-pinterest"></i
-            ></a>
+            <a href="https://www.youtube.com/@ProgrammingforCareer" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/programming-for-career" aria-label="Linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </div>

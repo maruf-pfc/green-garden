@@ -3,7 +3,7 @@ require "db_connection.php";
 
 // Fetch category, price, and search query from GET request
 $category = isset($_GET["category"]) ? intval($_GET["category"]) : "";
-$max_price = isset($_GET["max_price"]) ? floatval($_GET["max_price"]) : 100;
+$max_price = isset($_GET["max_price"]) ? floatval($_GET["max_price"]) : 500;
 $search_query = isset($_GET["search_query"]) ? trim($_GET["search_query"]) : "";
 
 // Build the SQL query based on the filters

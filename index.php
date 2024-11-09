@@ -1,5 +1,6 @@
 <?php
 session_start();
+$timeout_duration = 600; // 10 minutes
 require "db_connection.php";
 include "./utilities/header.php";
 
@@ -58,8 +59,16 @@ if (isset($_SESSION["message"])) {
 
             <div>
                 <label for="priceRange">Price Range:</label>
-                <input type="range" id="priceRange" min="0" max="2000" step="20" oninput="document.getElementById('priceRangeValue').innerText = 'Up to: TK' + this.value" onchange="filterProducts()">
-                <span id="priceRangeValue">Up to: 2000 TK</span>
+                <input 
+                    type="range" 
+                    id="priceRange" 
+                    min="100" 
+                    max="500"
+                    step="50"
+                    value="500"
+                    oninput="updatePriceLabel(this.value)"
+                    onchange="filterProducts()">
+                <span id="priceRangeValue">Up to: 500 TK</span>
             </div>
         </div>
     </section>
